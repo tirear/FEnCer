@@ -1,0 +1,34 @@
+structure       
+coordinates     
+bincoordinates  
+binvelocities   
+extendedSystem  
+paraTypeCharmm  on
+parameters      
+outputEnergies 100000
+outputTiming   100000
+xstFreq        
+dcdFreq        
+timestep            1
+nonBondedFreq       2
+fullElectFrequency  4
+stepsPerCycle      20
+# rigidBonds        all
+switching    on
+switchDist   12
+cutoff       14
+pairlistdist 16
+exclude        scaled1-4
+1-4scaling     1.0
+langevin                 on
+langevinDamping          1
+langevinTemp             
+langevinHydrogen         on
+binaryoutput     off
+outputname       
+restartname      
+restartfreq      
+colvars        on
+colvarsConfig  
+firstTimeStep 
+run           
