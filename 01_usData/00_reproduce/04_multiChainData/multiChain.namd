@@ -1,0 +1,35 @@
+structure       ../q2_H.psf
+coordinates     ../q2_H.pdb
+bincoordinates  ../03_reProduced.coor
+temperature     0
+paraTypeCharmm  on
+parameters      ../par_all27_prot_na.txt
+outputEnergies  1000000
+timestep        1
+nonBondedFreq   1
+fullElectFrequency 1
+stepsPerCycle   1
+switching    on
+switchDist   3
+cutoff       5
+pairlistdist 7
+exclude          scaled1-4
+1-4scaling       1.0
+binaryoutput     off
+outputname       multiChain_out
+colvars              on
+colvarsConfig        multiChain.in
+set ts 0
+firstTimestep    $ts
+run 0
+coorfile open dcd "../03_reProduced.dcd"
+coorfile read
+incr ts 1
+firstTimestep    $ts
+run 0
+while {[coorfile read] == 0} {
+  incr ts 1
+  firstTimestep    $ts
+  run 0
+}
+coorfile close
