@@ -1,0 +1,7 @@
+vmd -dispdev text -e 01_center.tcl > 01_center.log
+# ==> 01_center.log, multiChain.in, 01_1settingsRef.txt
+
+namdsub multiChain
+
+perl 02_npt2nvt4xst.pl "../../../../tmd_out_all.xst" "02_npt2nvt.xst"
+# ==> 02_npt2nvt.xst
